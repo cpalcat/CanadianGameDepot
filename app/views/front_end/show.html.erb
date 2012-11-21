@@ -1,0 +1,19 @@
+<body>
+  <head>
+    <p>Information For <%= @product.title %></p>
+  </head>
+  
+  <div id="sidebar">
+    
+  </div>
+  
+  <nav>
+    <%= link_to 'Titles For PS3', root_url(:category => 'PS3') %>
+    <%= link_to 'Titles For XBox 360', root_url(:category => 'XBOX') %>
+    <%= link_to 'Show All Titles', root_url %>
+  </nav>
+  
+  <%= render :partial => 'product', :object => @product, :as => 'product' %>
+  
+  <%= link_to 'Back to all products', root_url %>
+</body>

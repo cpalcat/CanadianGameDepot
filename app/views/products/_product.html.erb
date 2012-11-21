@@ -1,0 +1,29 @@
+<div id='product'>
+  <div id='title'>
+    <h1><%= product.title %></h1>
+  </div>  
+  
+  <div id='image'>
+    <% if product.image.present? %>
+      <%= image_tag product.image, :width => '200', :height => '275' %>
+    <% end %>
+  </div>
+  
+  <div id='info'>
+      <p>$<%= product.cost %></p>
+      <p><b>Copies Remaining: <%= product.quantity %></b></p>
+      <p><%= product.category %></p>
+      <% if product.sale == 1 %>
+        <p>Sale!!</p>
+      <% end %>
+      <% if product.new == 1 %>
+        <p>New Release!!</p>
+      <% end %>
+  </div>
+  
+  <div id='links'>
+    <%= link_to 'Show', product %>
+    <%= link_to 'Edit', edit_product_path(product) %>
+    <%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %>
+  </div>
+</div>

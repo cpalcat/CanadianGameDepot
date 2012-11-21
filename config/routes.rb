@@ -1,6 +1,26 @@
 CanadianGameDepot::Application.routes.draw do
-  resources :products
 
+  resources :front_end
+
+  resources :line_items
+
+  resources :orders
+
+  resources :provinces
+
+  resources :customers
+
+  resources :users
+
+  resources :categories
+
+  resources :products
+  
+  root :to => 'front_end#index'
+  
+  match 'search' => 'front_end#search', :as => 'search', :via => :get
+  match 'results' => 'front_end#search_results', :as => 'search_results', :via => :post
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

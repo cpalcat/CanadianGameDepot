@@ -1,0 +1,32 @@
+<div id='product'>
+  <div id='title'>
+    <h1><%= product.title %></h1>
+  </div>  
+  
+  <div id='image'>
+    <% if product.image.present? %>
+      <%= image_tag product.image, :width => '200', :height => '275' %>
+    <% end %>
+  </div>
+  
+  <div id='info'>
+      <p>$<%= product.cost %></p>
+      <p><b>Copies Remaining: <%= product.quantity %></b></p>
+      <p><%= product.category %></p>
+      <% if product.sale == 1 %>
+        <div>
+          <p><%= image_tag "sale.jpg", :width => '50', :height => '50' %> - Originally $<%= product.cost + 10 %></p>
+        </div>
+      <% end %>
+      <% if product.new == 1 %>
+        <div>
+          <%= image_tag "new.jpg", :width => '50', :height => '50' %>
+        </div>
+      <% end %>
+  </div>
+  
+  <div id='links'>
+    <br />
+    <%= link_to 'Show', front_end_path(product) %>
+  </div>
+</div>

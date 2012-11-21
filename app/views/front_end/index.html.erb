@@ -1,0 +1,20 @@
+<body>
+  <head>
+    <p>Listing All Products</p>
+  </head>
+  
+  <div id="sidebar">
+    <%= render :partial => 'front_end/searchform' %>
+  </div>
+  
+  <nav>
+    <%= link_to 'Titles For PS3', root_url(:category => 'PS3') %>
+    <%= link_to 'Titles For XBox 360', root_url(:category => 'XBOX') %>
+    <%= link_to 'Show All Titles', root_url %>
+  </nav>
+  <br />
+  
+  <table>
+    <tr><%= render :partial => 'product', :collection => @products, :as => 'product' %></tr>
+  </table>
+</body>

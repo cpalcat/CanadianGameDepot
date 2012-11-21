@@ -1,0 +1,28 @@
+<h1>Listing provinces</h1>
+
+<nav>
+  <%= render 'products/nav' %>
+</nav>
+
+<table>
+  <tr>
+    <th>Province</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @provinces.each do |province| %>
+  <tr>
+    <td><%= province.province %></td>
+    <td><%= province.tax %></td>
+    <td><%= link_to 'Show', province %></td>
+    <td><%= link_to 'Edit', edit_province_path(province) %></td>
+    <td><%= link_to 'Destroy', province, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Province', new_province_path %>

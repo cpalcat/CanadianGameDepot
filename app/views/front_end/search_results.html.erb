@@ -1,3 +1,17 @@
+<h1>Search Results</h1>
 
+<div id="sidebar">
+  <%= render :partial => 'front_end/searchform' %>
+</div>
 
-<%= render @products %>
+<nav>
+  <%= link_to 'Titles For PS3', root_url(:category => 'PS3') %>
+  <%= link_to 'Titles For XBox 360', root_url(:category => 'XBOX') %>
+  <%= link_to 'Show All Titles', root_url %>
+</nav>
+
+<% if @products.size > 1 %>
+  <%= render :partial => 'product', :collection => @products, :as => 'product' %>
+<% else %>
+  <%= render :partial => 'product', :object => @product, :as => 'product' %>
+<% end %>

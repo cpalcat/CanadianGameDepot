@@ -10,6 +10,8 @@ class ProductsController < ApplicationController
         @products = Product.includes(:category).where('category = 1').order('sale DESC, new DESC')
       elsif (params[:category] == 'XBOX') 
         @products = Product.includes(:category).where('category = 2').order('sale DESC, new DESC')
+      elsif (params[:category] == 'PC') 
+        @products = Product.includes(:category).where('category = 3').order('sale DESC, new DESC')
       end
     else
       @products = Product.includes(:category).order('sale DESC, new DESC')

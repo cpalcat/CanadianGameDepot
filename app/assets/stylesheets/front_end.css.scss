@@ -1,13 +1,85 @@
 // Place all the styles related to the FrontEnd controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body{
-    //background-image:url('Background/white.jpg');
-    background-repeat:no-repeat;
-    background-position:right top;
-    
-    -webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+.front_end{
+    background-image:url('Background/hex.jpg');
+}
+
+#header, #nav, #footer, #product, #sidebar, #results h3{
+	background-image:url('Background/shirt.jpg');
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	box-shadow: 6px 6px 5px #000000;
+	border: solid 1px black;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+
+#header{
+	align: center;
+	width: 75%;
+	height: 50px;
+	margin: 0px auto;
+	text-align: center;
+	}
+	
+#header h1{
+	margin-top: 0px;
+	padding: 15px;
+	color: #6495ED;
+}
+
+#nav, #footer{
+	margin: 0px auto;
+	width: 75%;
+	border-top-color: #CDCDC1;
+	border-bottom-color: #CDCDC1;
+	border-top: solid 5px;
+	border-bottom: solid 5px;
+}
+
+#nav a, #footer a{
+	display: inline;
+	margin-left: 110px;
+	text-decoration: none;
+	color: #CDCDC1;
+	font-size: 14px;
+}
+
+#nav a:hover, #footer a:hover{
+	background: transparent;
+}
+
+#sidebar{
+	float: right;
+	margin-top: 25px;
+	margin-right: 5px;
+	padding: 5px;
+	height: 150px;
+}
+
+#sidebar form{
+	margin-right: 30px;
+}
+
+#products, #results{
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+#product{
+	padding: 20px;
+	width: 60%;
+	margin: 20px auto;
+}
+
+#results{
+	
+}
+
+#results h3{
+	text-align: center;
+	width: 60%;
+	margin: 0px auto;
+	padding: 40px;
 }

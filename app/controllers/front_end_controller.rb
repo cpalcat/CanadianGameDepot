@@ -1,4 +1,4 @@
-class FrontEndController < ActionController::Base
+class FrontEndController < ApplicationController
   protect_from_forgery
     
   def index
@@ -7,6 +7,8 @@ class FrontEndController < ActionController::Base
         @products = Product.includes(:category).where('category = 1').order('sale DESC, new DESC')
       elsif (params[:category] == 'XBOX') 
         @products = Product.includes(:category).where('category = 2').order('sale DESC, new DESC')
+      else 
+        @products = Product.includes(:category).where('category = 3').order('sale DESC, new DESC')  
       end
     else
       @products = Product.includes(:category).order('sale DESC, new DESC')
@@ -35,4 +37,6 @@ class FrontEndController < ActionController::Base
       @keywords = params[:keywords]
       @products = Product.where('title LIKE ?', "%#{@keywords}%")
   end
+  
+  
 end

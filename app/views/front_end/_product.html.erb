@@ -1,21 +1,21 @@
 <div id='product'>
-  <div id='title'>
+  <div class='title'>
     <h1><%= product.title %></h1>
   </div>  
   
-  <div id='image'>
+  <div class='image'>
     <% if product.image.present? %>
       <%= image_tag product.image, :width => '200', :height => '275' %>
     <% end %>
   </div>
   
-  <div id='info'>
+  <div class='info'>
       <p>$<%= product.cost %></p>
       <p><b>Copies Remaining: <%= product.quantity %></b></p>
       <p><%= product.category %></p>
       <% if product.sale == 1 %>
         <div>
-          <p><%= image_tag "sale.jpg", :width => '50', :height => '50' %> - Originally $<%= product.cost + 10 %></p>
+          <p><%= image_tag "sale.jpg", :width => '50', :height => '50' %> - Originally <%= number_to_currency(product.cost + 10) %></p>
         </div>
       <% end %>
       <% if product.new == 1 %>
@@ -25,7 +25,7 @@
       <% end %>
   </div>
   
-  <div id='links'>
+  <div class='link'>
     <br />
     <%= link_to 'Show', front_end_path(product) %>
   </div>

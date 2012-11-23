@@ -1,20 +1,21 @@
-<body>
-  <head>
-    <p>Listing All Products</p>
-  </head>
+<body class="front_end">
+  <div id="header">
+    <h1>Listing All Products</h1>
+  </div>
+  
+  <div id="nav">
+    <%= render :partial => 'front_end/usernav' %>
+  </div>
   
   <div id="sidebar">
     <%= render :partial => 'front_end/searchform' %>
   </div>
   
-  <nav>
-    <%= link_to 'Titles For PS3', root_url(:category => 'PS3') %>
-    <%= link_to 'Titles For XBox 360', root_url(:category => 'XBOX') %>
-    <%= link_to 'Show All Titles', root_url %>
-  </nav>
-  <br />
+  <div id="products">
+    <%= render :partial => 'product', :collection => @products, :as => 'product' %>
+  </div>
   
-  <table>
-    <tr><%= render :partial => 'product', :collection => @products, :as => 'product' %></tr>
-  </table>
+  <div id="footer">
+    <%= render :partial => 'front_end/usernav' %>
+  </div>
 </body>

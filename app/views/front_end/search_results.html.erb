@@ -1,17 +1,25 @@
-<h1>Search Results</h1>
-
-<div id="sidebar">
-  <%= render :partial => 'front_end/searchform' %>
-</div>
-
-<nav>
-  <%= link_to 'Titles For PS3', root_url(:category => 'PS3') %>
-  <%= link_to 'Titles For XBox 360', root_url(:category => 'XBOX') %>
-  <%= link_to 'Show All Titles', root_url %>
-</nav>
-
-<% if @products.size > 1 %>
-  <%= render :partial => 'product', :collection => @products, :as => 'product' %>
-<% else %>
-  <%= render :partial => 'product', :object => @product, :as => 'product' %>
-<% end %>
+<body class="front_end">
+  <div id="header">
+    <h1>Search Results</h1>
+  </div>
+  
+  <div id="nav">
+    <%= render :partial => 'front_end/usernav' %>
+  </div>
+  
+  <div id="sidebar">
+    <%= render :partial => 'front_end/searchform' %>
+  </div>
+  
+  <div id="results">
+    <% if @products.size > 0 %>
+      <%= render :partial => 'front_end/product', :collection => @products, :as => 'product' %>
+    <% else %>
+      <h3>No Results Found</h3>
+    <% end %>
+  </div>
+  
+  <div id="footer">
+    <%= render :partial => 'front_end/usernav' %>
+  </div>
+</body>

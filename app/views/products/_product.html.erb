@@ -12,7 +12,7 @@
   <div>
       <p>$<%= product.cost %></p>
       <p><b>Copies Remaining: <%= product.quantity %></b></p>
-      <p><%= product.category %></p>
+      <p><%= product.category.name %></p>
       <% if product.sale == 1 %>
         <p>Sale!!</p>
       <% end %>
